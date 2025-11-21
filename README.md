@@ -1,6 +1,8 @@
-# ✨ Gleam - Chrome Extension
-
-Curate your digital wisdom. Select text, share it, and save it with an elegant UI.
+<div align="center">
+  <img src="icons/icon128.png" alt="Gleam Logo" width="100" />
+  <h1>Gleam</h1>
+  <p>Curate your digital wisdom. Select text, share it, and save it with an elegant UI.</p>
+</div>
 
 ## Features
 

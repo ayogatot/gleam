@@ -1,0 +1,206 @@
+/* 
+  These styles will be injected into the Shadow DOM, 
+  so they won't conflict with the page's styles.
+*/
+
+:host {
+  all: initial;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  z-index: 2147483647; /* Max z-index */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Tooltip */
+.hm-tooltip {
+  position: fixed;
+  background: #111827;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translate(-50%, -100%);
+  margin-top: -10px;
+  animation: hm-fade-in 0.2s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 1000;
+}
+
+.hm-tooltip:hover {
+  background: #000000;
+  transform: translate(-50%, -100%) scale(1.05);
+}
+
+.hm-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #111827 transparent transparent transparent;
+}
+
+/* Modal Overlay */
+.hm-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: hm-fade-in 0.3s ease-out;
+}
+
+/* Modal Card */
+.hm-modal {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: hm-slide-up 0.3s ease-out;
+}
+
+.hm-modal-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hm-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.hm-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 24px;
+  line-height: 1;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.hm-close-btn:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Quote Card (The part to be screenshotted) */
+.hm-quote-card {
+  padding: 32px;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hm-quote-text {
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #1f2937;
+  font-style: italic;
+  position: relative;
+}
+
+.hm-quote-text::before {
+  content: '“';
+  font-size: 60px;
+  color: #d1d5db;
+  position: absolute;
+  top: -20px;
+  left: -30px;
+  font-family: serif;
+}
+
+.hm-quote-source {
+  align-self: flex-end;
+  font-size: 14px;
+  color: #4b5563;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hm-quote-source img {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+/* Actions Footer */
+.hm-modal-footer {
+  padding: 16px 24px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.hm-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.hm-btn-secondary {
+  background: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.hm-btn-secondary:hover {
+  background: #f3f4f6;
+}
+
+.hm-btn-primary {
+  background: #111827;
+  color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.hm-btn-primary:hover {
+  background: #000000;
+  transform: translateY(-1px);
+}
+
+@keyframes hm-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hm-slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

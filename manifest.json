@@ -5,8 +5,7 @@
   "description": "Curate your digital wisdom. Select text, share it, and save it with an elegant UI.",
   "permissions": [
     "activeTab",
-    "storage",
-    "scripting"
+    "storage"
   ],
   "action": {
     "default_popup": "popup.html",

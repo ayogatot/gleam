@@ -26,9 +26,7 @@ The extension stores the following data **locally on your device only**:
 
 The extension requests the following permissions:
 
-- **activeTab**: To access the currently active webpage when you choose to save a highlight
 - **storage**: To save your highlights locally on your device
-- **scripting**: To inject the selection tooltip and modal on webpages
 
 These permissions are used **only** for the core functionality of highlighting and saving text.
 

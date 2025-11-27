@@ -4,7 +4,6 @@
   "version": "1.0",
   "description": "Curate your digital wisdom. Select text, share it, and save it with an elegant UI.",
   "permissions": [
-    "activeTab",
     "storage"
   ],
   "action": {
